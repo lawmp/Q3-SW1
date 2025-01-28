@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q3-SW1</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #fffdaf;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 15px;
+            background-color: #d6f5ea;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            text-align: center;
+        }
+        h1 {
+            font-size: 1.8rem;
+            color: #005c5c;
+        }
+        p {
+            font-size: 1rem;
+            color: #4d4d4d;
+        }
+        .btn {
+            width: 150px;
+            margin: 10px;
+            font-size: 0.9rem;
+        }
+        .output {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #fff8e1;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        .refresh-btn {
+            margin-top: 20px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>AREA AND CIRCUMFERENCE OF A CIRCLE</h1>
+        <p>Find the area and the circumference of a circle whose radius is <strong>10.25 cm</strong>.</p>
+        <img src="https://www.kidsmathgamesonline.com/images/pictures/math680/circlebasics.jpg?text=Circle+Diagram" alt="Circle Diagram" class="img-fluid my-3">
+
+        <button id="areaBtn" class="btn btn-warning">AREA</button>
+        <button id="circumferenceBtn" class="btn btn-warning">CIRCUMFERENCE</button>
+
+        <div id="output" class="output">The result will be displayed here.</div>
+
+        <button id="refreshBtn" class="btn btn-secondary refresh-btn">REFRESH PAGE</button>
+    </div>
+
+    <script>
+        const radius = 10.25;
+        const pi = Math.PI;
+
+        document.getElementById('areaBtn').addEventListener('click', () => {
+            const area = (pi * Math.pow(radius, 2)).toFixed(2);
+            document.getElementById('output').innerText = `The area of the circle is ${area} cm².`;
+        });
+
+        document.getElementById('circumferenceBtn').addEventListener('click', () => {
+            const circumference = (2 * pi * radius).toFixed(2);
+            document.getElementById('output').innerText = `The circumference of the circle is ${circumference} cm.`;
+        });
+
+        document.getElementById('refreshBtn').addEventListener('click', () => {
+            location.reload();
+        });
+    </script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
